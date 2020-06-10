@@ -24,7 +24,7 @@ public class App extends Application {
     App.primaryStage = primaryStage;
     try {
       root =
-          FXMLLoader.load(getClass().getResource("/views/EAppVer1.fxml"));
+          FXMLLoader.load(getClass().getResource("/views/base.fxml"));
       scene = new Scene(root);
 
       primaryStage.setScene(scene);
