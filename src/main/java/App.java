@@ -36,10 +36,10 @@ public class App extends Application {
                   String.valueOf(
                       getClass().getResource("/images/favicon.png"))));
 
-      Screen screen = Screen.getPrimary();
+      /*Screen screen = Screen.getPrimary();
       Rectangle2D bounds = screen.getVisualBounds();
       App.getPrimaryStage().setWidth(bounds.getWidth());
-      App.getPrimaryStage().setHeight(bounds.getHeight());
+      App.getPrimaryStage().setHeight(bounds.getHeight());*/
       primaryStage.show();
     } catch (IOException e) {
       e.printStackTrace();
