@@ -141,3 +141,6 @@ gradle-app.setting
 **/build/
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij,database,gradle
+/Mdb/log/README_DO_NOT_TOUCH_FILES.txt
+/Mdb/seg0/README_DO_NOT_TOUCH_FILES.txt
+/Mdb/README_DO_NOT_TOUCH_FILES.txt
