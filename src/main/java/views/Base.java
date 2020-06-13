@@ -75,7 +75,7 @@ public class Base {
   Media sound;
   MediaPlayer player;
   HashMap<Button, String> defaultSounds = new HashMap<>();
-  HashMap<Button, String> guitarSounds = new HashMap<>();
+  HashMap<Button, String> pianoSounds = new HashMap<>();
 
   HashMap<Integer, Button> answers = new HashMap<>();
 
@@ -129,6 +129,30 @@ public class Base {
     defaultSounds.put(bHalfFlat, String.valueOf(getClass().getResource("/sounds/default/22_BHalfFlat.mp3")));
     defaultSounds.put(bNat, String.valueOf(getClass().getResource("/sounds/default/23_BNatural.mp3")));
     defaultSounds.put(bHalfSharp, String.valueOf(getClass().getResource("/sounds/default/24_BHalfSharp.mp3")));
+    pianoSounds.put(cNat,String.valueOf(getClass().getResource("/sounds/piano/01piano.mp3")));
+    pianoSounds.put(cHalfSharp,String.valueOf(getClass().getResource("/sounds/piano/02piano.mp3")));
+    pianoSounds.put(cSharp,String.valueOf(getClass().getResource("/sounds/piano/03piano.mp3")));
+    pianoSounds.put(dHalfFlat,String.valueOf(getClass().getResource("/sounds/piano/04piano.mp3")));
+    pianoSounds.put(dNat,String.valueOf(getClass().getResource("/sounds/piano/05piano.mp3")));
+    pianoSounds.put(dHalfSharp,String.valueOf(getClass().getResource("/sounds/piano/06piano.mp3")));
+    pianoSounds.put(dSharp,String.valueOf(getClass().getResource("/sounds/piano/07piano.mp3")));
+    pianoSounds.put(eHalfFlat,String.valueOf(getClass().getResource("/sounds/piano/08piano.mp3")));
+    pianoSounds.put(eNat,String.valueOf(getClass().getResource("/sounds/piano/09piano.mp3")));
+    pianoSounds.put(eHalfSharp,String.valueOf(getClass().getResource("/sounds/piano/10piano.mp3")));
+    pianoSounds.put(fNat,String.valueOf(getClass().getResource("/sounds/piano/11piano.mp3")));
+    pianoSounds.put(fHalfSharp,String.valueOf(getClass().getResource("/sounds/piano/12piano.mp3")));
+    pianoSounds.put(fSharp,String.valueOf(getClass().getResource("/sounds/piano/13piano.mp3")));
+    pianoSounds.put(gHalfFlat,String.valueOf(getClass().getResource("/sounds/piano/14piano.mp3")));
+    pianoSounds.put(gNat,String.valueOf(getClass().getResource("/sounds/piano/15piano.mp3")));
+    pianoSounds.put(gHalfSharp,String.valueOf(getClass().getResource("/sounds/piano/16piano.mp3")));
+    pianoSounds.put(gSharp,String.valueOf(getClass().getResource("/sounds/piano/17piano.mp3")));
+    pianoSounds.put(aHalfFlat,String.valueOf(getClass().getResource("/sounds/piano/18piano.mp3")));
+    pianoSounds.put(aNat,String.valueOf(getClass().getResource("/sounds/piano/19piano.mp3")));
+    pianoSounds.put(aHalfSharp,String.valueOf(getClass().getResource("/sounds/piano/20piano.mp3")));
+    pianoSounds.put(aSharp,String.valueOf(getClass().getResource("/sounds/piano/21piano.mp3")));
+    pianoSounds.put(bHalfFlat,String.valueOf(getClass().getResource("/sounds/piano/22piano.mp3")));
+    pianoSounds.put(bNat,String.valueOf(getClass().getResource("/sounds/piano/23piano.mp3")));
+    pianoSounds.put(bHalfSharp,String.valueOf(getClass().getResource("/sounds/piano/24piano.mp3")));
 
     try {
       Statement stmt = conn.createStatement();
@@ -150,13 +174,13 @@ public class Base {
   public void generateNote() {
     int ans = (int) ((Math.random() * ((24 - 1) + 1)) + 1);
     answerBtn = answers.get(ans);
-    Sound(defaultSounds.get(answerBtn));
+    Sound(pianoSounds.get(answerBtn));
     replayBtn.setDisable(false);
     play();
   }
 
   public void replayNote(ActionEvent actionEvent) {
-    Sound(defaultSounds.get(answerBtn));
+    Sound(pianoSounds.get(answerBtn));
     play();
   }
 
@@ -166,7 +190,7 @@ public class Base {
 
   public void checkAnswer(ActionEvent actionEvent) {
     Object source = actionEvent.getSource();
-    Sound(defaultSounds.get(source));
+    Sound(pianoSounds.get(source));
     play();
     if (answerBtn.equals(source)) {
       addScore();
