@@ -1,5 +1,6 @@
 package views;
 
+import database.DB;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -7,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
+import java.sql.*;
 import java.util.HashMap;
 
 public class Base {
@@ -64,13 +66,17 @@ public class Base {
   Button bHalfSharp;
   @FXML
   Label score;
-  Button answerBtn;
+  Button answerBtn = new Button();
   Button nullBtn = new Button();
+  DB database = new DB("admin","password");
+  Connection conn = database.connectDB("admin","password");
 
   String file;
   Media sound;
   MediaPlayer player;
-  HashMap<Button, String> sounds = new HashMap<>();
+  HashMap<Button, String> defaultSounds = new HashMap<>();
+  HashMap<Button, String> guitarSounds = new HashMap<>();
+
   HashMap<Integer, Button> answers = new HashMap<>();
 
   @FXML
@@ -99,42 +105,58 @@ public class Base {
     answers.put(22, bHalfFlat);
     answers.put(23, bNat);
     answers.put(24, bHalfSharp);
-    sounds.put(cNat, String.valueOf(getClass().getResource("/sounds/01_CNatural5.mp3")));
-    sounds.put(cHalfSharp, String.valueOf(getClass().getResource("/sounds/02_CHalfSharp.mp3")));
-    sounds.put(cSharp, String.valueOf(getClass().getResource("/sounds/03_CSharp.mp3")));
-    sounds.put(dHalfFlat, String.valueOf(getClass().getResource("/sounds/04_DHalfFlat.mp3")));
-    sounds.put(dNat, String.valueOf(getClass().getResource("/sounds/05_DNatural.mp3")));
-    sounds.put(dHalfSharp, String.valueOf(getClass().getResource("/sounds/06_DHalfSharp.mp3")));
-    sounds.put(dSharp, String.valueOf(getClass().getResource("/sounds/07_DSharp.mp3")));
-    sounds.put(eHalfFlat, String.valueOf(getClass().getResource("/sounds/08_EHalfFlat.mp3")));
-    sounds.put(eNat, String.valueOf(getClass().getResource("/sounds/09_ENatural.mp3")));
-    sounds.put(eHalfSharp, String.valueOf(getClass().getResource("/sounds/10_EHalfSharp.mp3")));
-    sounds.put(fNat, String.valueOf(getClass().getResource("/sounds/11_FNatural.mp3")));
-    sounds.put(fHalfSharp, String.valueOf(getClass().getResource("/sounds/12_FHalfSharp.mp3")));
-    sounds.put(fSharp, String.valueOf(getClass().getResource("/sounds/13_FSharp.mp3")));
-    sounds.put(gHalfFlat, String.valueOf(getClass().getResource("/sounds/14_GHalfFlat.mp3")));
-    sounds.put(gNat, String.valueOf(getClass().getResource("/sounds/15_GNatural.mp3")));
-    sounds.put(gHalfSharp, String.valueOf(getClass().getResource("/sounds/16_GHalfSharp.mp3")));
-    sounds.put(gSharp, String.valueOf(getClass().getResource("/sounds/17_GSharp.mp3")));
-    sounds.put(aHalfFlat, String.valueOf(getClass().getResource("/sounds/18_AHalfFlat.mp3")));
-    sounds.put(aNat, String.valueOf(getClass().getResource("/sounds/19_ANatural.mp3")));
-    sounds.put(aHalfSharp, String.valueOf(getClass().getResource("/sounds/20_AHalfSharp.mp3")));
-    sounds.put(aSharp, String.valueOf(getClass().getResource("/sounds/21_ASharp.mp3")));
-    sounds.put(bHalfFlat, String.valueOf(getClass().getResource("/sounds/22_BHalfFlat.mp3")));
-    sounds.put(bNat, String.valueOf(getClass().getResource("/sounds/23_BNatural.mp3")));
-    sounds.put(bHalfSharp, String.valueOf(getClass().getResource("/sounds/24_BHalfSharp.mp3")));
+    defaultSounds.put(cNat, String.valueOf(getClass().getResource("/sounds/default/01_CNatural5.mp3")));
+    defaultSounds.put(cHalfSharp, String.valueOf(getClass().getResource("/sounds/default/02_CHalfSharp.mp3")));
+    defaultSounds.put(cSharp, String.valueOf(getClass().getResource("/sounds/default/03_CSharp.mp3")));
+    defaultSounds.put(dHalfFlat, String.valueOf(getClass().getResource("/sounds/default/04_DHalfFlat.mp3")));
+    defaultSounds.put(dNat, String.valueOf(getClass().getResource("/sounds/default/05_DNatural.mp3")));
+    defaultSounds.put(dHalfSharp, String.valueOf(getClass().getResource("/sounds/default/06_DHalfSharp.mp3")));
+    defaultSounds.put(dSharp, String.valueOf(getClass().getResource("/sounds/default/07_DSharp.mp3")));
+    defaultSounds.put(eHalfFlat, String.valueOf(getClass().getResource("/sounds/default/08_EHalfFlat.mp3")));
+    defaultSounds.put(eNat, String.valueOf(getClass().getResource("/sounds/default/09_ENatural.mp3")));
+    defaultSounds.put(eHalfSharp, String.valueOf(getClass().getResource("/sounds/default/10_EHalfSharp.mp3")));
+    defaultSounds.put(fNat, String.valueOf(getClass().getResource("/sounds/default/11_FNatural.mp3")));
+    defaultSounds.put(fHalfSharp, String.valueOf(getClass().getResource("/sounds/default/12_FHalfSharp.mp3")));
+    defaultSounds.put(fSharp, String.valueOf(getClass().getResource("/sounds/default/13_FSharp.mp3")));
+    defaultSounds.put(gHalfFlat, String.valueOf(getClass().getResource("/sounds/default/14_GHalfFlat.mp3")));
+    defaultSounds.put(gNat, String.valueOf(getClass().getResource("/sounds/default/15_GNatural.mp3")));
+    defaultSounds.put(gHalfSharp, String.valueOf(getClass().getResource("/sounds/default/16_GHalfSharp.mp3")));
+    defaultSounds.put(gSharp, String.valueOf(getClass().getResource("/sounds/default/17_GSharp.mp3")));
+    defaultSounds.put(aHalfFlat, String.valueOf(getClass().getResource("/sounds/default/18_AHalfFlat.mp3")));
+    defaultSounds.put(aNat, String.valueOf(getClass().getResource("/sounds/default/19_ANatural.mp3")));
+    defaultSounds.put(aHalfSharp, String.valueOf(getClass().getResource("/sounds/default/20_AHalfSharp.mp3")));
+    defaultSounds.put(aSharp, String.valueOf(getClass().getResource("/sounds/default/21_ASharp.mp3")));
+    defaultSounds.put(bHalfFlat, String.valueOf(getClass().getResource("/sounds/default/22_BHalfFlat.mp3")));
+    defaultSounds.put(bNat, String.valueOf(getClass().getResource("/sounds/default/23_BNatural.mp3")));
+    defaultSounds.put(bHalfSharp, String.valueOf(getClass().getResource("/sounds/default/24_BHalfSharp.mp3")));
+
+    try {
+      Statement stmt = conn.createStatement();
+      String query = String.format("SELECT * FROM DATA WHERE PLAYER = '%s'","defaultUser");
+
+      ResultSet rs = stmt.executeQuery(query);
+      String tempStr = "0";
+      while(rs.next()) {
+        tempStr = Integer.toString(rs.getInt("SCORE"));
+      }
+      System.out.println(tempStr);
+      score.setText(tempStr);
+    } catch (SQLException throwables) {
+      throwables.printStackTrace();
+    }
+
   }
 
   public void generateNote() {
     int ans = (int) ((Math.random() * ((24 - 1) + 1)) + 1);
     answerBtn = answers.get(ans);
-    Sound(sounds.get(answerBtn));
+    Sound(defaultSounds.get(answerBtn));
     replayBtn.setDisable(false);
     play();
   }
 
   public void replayNote(ActionEvent actionEvent) {
-    Sound(sounds.get(answerBtn));
+    Sound(defaultSounds.get(answerBtn));
     play();
   }
 
@@ -144,7 +166,7 @@ public class Base {
 
   public void checkAnswer(ActionEvent actionEvent) {
     Object source = actionEvent.getSource();
-    Sound(sounds.get(source));
+    Sound(defaultSounds.get(source));
     play();
     if (answerBtn.equals(source)) {
       addScore();
@@ -154,9 +176,21 @@ public class Base {
   }
 
   public void addScore() {
+    System.out.println(score.getText());
     int tempScore = Integer.parseInt(score.getText());
     tempScore++;
     score.setText(Integer.toString(tempScore));
+    try {
+      String sql = "UPDATE DATA SET SCORE = ? WHERE PLAYER = ?";
+      PreparedStatement ps = conn.prepareStatement(sql);
+      ps.setInt(1,tempScore);
+      ps.setString(2,"defaultUser");
+      ps.executeUpdate();
+      ps.close();
+    }
+    catch(Exception e) {
+      e.printStackTrace();
+    }
   }
 
   public void Sound(String file) {

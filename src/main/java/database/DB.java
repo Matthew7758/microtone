@@ -1,3 +1,5 @@
+package database;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -128,7 +130,7 @@ public class DB {
       while (resultSet.next()) {
         String databaseName = resultSet.getString(1);
         // System.out.println(databaseName);
-        if (databaseName.equals("MDB") || databaseName.equals("MDB")) {
+        if (databaseName.equals("Mdb") || databaseName.equals("Mdb")) {
           return true;
         }
       }
@@ -189,8 +191,17 @@ public class DB {
       // Create tables
       // Create tables
       String query =
-          "CREATE TABLE data(player VARCHAR(255) NOT NULL, score INT, unlocked INT, PRIMARY KEY (player))";
+          "CREATE TABLE data(player VARCHAR(255) NOT NULL, score INT, unlockedKeys INT, unlockedSounds INT, PRIMARY KEY (player))";
       stmt.execute(query);
+      // Add default user to Employee table
+      String sql = "INSERT INTO DATA(PLAYER, SCORE, UNLOCKEDKEYS, UNLOCKEDSOUNDS) VALUES (?, ?, ?, ?)";
+      PreparedStatement ps = connection.prepareStatement(sql);
+      ps.setString(1,"defaultUser");
+      ps.setInt(2,0);
+      ps.setInt(3,0);
+      ps.setInt(4,0);
+      ps.executeUpdate();
+      ps.close();
       stmt.close();
     } catch (SQLException e) {
       System.out.println("Error in runSetup().");

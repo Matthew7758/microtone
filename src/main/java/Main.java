@@ -1,3 +1,5 @@
+import database.DB;
+
 import java.sql.Connection;
 
 public class Main {
