@@ -66,11 +66,13 @@ public class Base {
   Button bHalfSharp;
   @FXML
   Label score;
+  @FXML
+  Button changeSoundBtn;
   Button answerBtn = new Button();
   Button nullBtn = new Button();
   DB database = new DB("admin","password");
   Connection conn = database.connectDB("admin","password");
-
+  private int soundType = 0;
   String file;
   Media sound;
   MediaPlayer player;
@@ -160,10 +162,13 @@ public class Base {
 
       ResultSet rs = stmt.executeQuery(query);
       String tempStr = "0";
+      int tempInt = 0;
       while(rs.next()) {
         tempStr = Integer.toString(rs.getInt("SCORE"));
+        tempInt = rs.getInt("SELECTEDSOUND");
       }
       System.out.println(tempStr);
+      soundType = tempInt; //Set previously selected sound type.
       score.setText(tempStr);
     } catch (SQLException throwables) {
       throwables.printStackTrace();
@@ -174,13 +179,19 @@ public class Base {
   public void generateNote() {
     int ans = (int) ((Math.random() * ((24 - 1) + 1)) + 1);
     answerBtn = answers.get(ans);
-    Sound(pianoSounds.get(answerBtn));
+    if(soundType==0)
+      Sound(defaultSounds.get(answerBtn));
+    else if(soundType==1)
+      Sound(pianoSounds.get(answerBtn));
     replayBtn.setDisable(false);
     play();
   }
 
   public void replayNote(ActionEvent actionEvent) {
-    Sound(pianoSounds.get(answerBtn));
+    if(soundType==0)
+      Sound(defaultSounds.get(answerBtn));
+    else if(soundType==1)
+      Sound(pianoSounds.get(answerBtn));
     play();
   }
 
@@ -190,7 +201,10 @@ public class Base {
 
   public void checkAnswer(ActionEvent actionEvent) {
     Object source = actionEvent.getSource();
-    Sound(pianoSounds.get(source));
+    if(soundType==0)
+      Sound(defaultSounds.get(source));
+    else if(soundType==1)
+      Sound(pianoSounds.get(source));
     play();
     if (answerBtn.equals(source)) {
       addScore();
@@ -237,5 +251,14 @@ public class Base {
 
   public void setVolume(double value) {
     player.setVolume(value);
+  }
+
+  //Cycles through the list of sounds.
+  public void changeSound(ActionEvent actionEvent) {//Note this is for testing. Ideally this is done in the shop.
+    if(soundType<1) {//Change 1 to the highest number of sounds in the final game.
+      soundType++;
+    }
+    else
+      soundType=0;
   }
 }

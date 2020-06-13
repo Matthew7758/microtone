@@ -191,7 +191,7 @@ public class DB {
       // Create tables
       // Create tables
       String query =
-          "CREATE TABLE data(player VARCHAR(255) NOT NULL, score INT, unlockedKeys INT, unlockedSounds INT, PRIMARY KEY (player))";
+          "CREATE TABLE data(player VARCHAR(255) NOT NULL, score INT, unlockedKeys INT, unlockedSounds INT, selectedSound INT, PRIMARY KEY (player))";
       stmt.execute(query);
       // Add default user to Employee table
       String sql = "INSERT INTO DATA(PLAYER, SCORE, UNLOCKEDKEYS, UNLOCKEDSOUNDS) VALUES (?, ?, ?, ?)";
