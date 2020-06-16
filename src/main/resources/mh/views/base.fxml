@@ -52,14 +52,6 @@
                         <Insets />
                     </opaqueInsets>
                 </Button>
-                <Button fx:id="changeSoundBtn" mnemonicParsing="false" onAction="#changeSound" prefHeight="46.0" prefWidth="142.0" text="Change Sound" GridPane.columnIndex="2">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                    <opaqueInsets>
-                        <Insets />
-                    </opaqueInsets>
-                </Button>
             </children>
         </GridPane>
 

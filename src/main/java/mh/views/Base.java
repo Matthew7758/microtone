@@ -72,8 +72,6 @@ public class Base {
   Button bHalfSharp;
   @FXML
   Label score;
-  @FXML
-  Button changeSoundBtn;
   Button answerBtn = new Button();
   Button nullBtn = new Button();
   DB database = new DB("admin", "password");
@@ -320,13 +318,5 @@ public class Base {
 
   public void setVolume(double value) {
     player.setVolume(value);
-  }
-
-  //Cycles through the list of sounds.
-  public void changeSound(ActionEvent actionEvent) {//Note this is for testing. Ideally this is done in the shop.
-    if (App.getSoundType() < 1) {//Change 1 to the highest number of sounds in the final game.
-      App.setSoundType(App.getSoundType() + 1);
-    } else
-      App.setSoundType(0);
   }
 }

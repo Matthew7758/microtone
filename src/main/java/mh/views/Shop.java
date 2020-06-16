@@ -90,9 +90,21 @@ public class Shop {
     if (App.getSoundType() < 1) {//Change 1 to the highest number of sounds in the final game.
       App.setSoundType(App.getSoundType() + 1);
       updateSoundLbl(App.getSoundType());
+
     } else {
       App.setSoundType(0);
       updateSoundLbl(App.getSoundType());
+    }
+    try {
+      String sql = "UPDATE DATA SET SELECTEDSOUND = ? WHERE PLAYER = ?";
+      PreparedStatement ps = conn.prepareStatement(sql);
+      ps.setInt(1,App.getSoundType());
+      ps.setString(2,"defaultUser");
+      ps.executeUpdate();
+      ps.close();
+    }
+    catch(Exception e) {
+      e.printStackTrace();
     }
   }
 
