@@ -1,11 +1,11 @@
+package mh;
+
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,15 +16,23 @@ public class App extends Application {
   @Getter
   @Setter
   private static Stage primaryStage;
-  @Getter @Setter private static Parent root;
-  @Getter @Setter private static Scene scene;
+  @Getter
+  @Setter
+  private static Parent root;
+  @Getter
+  @Setter
+  private static Scene scene;
+  @Getter
+  @Setter
+  private static int soundType = 0;
+
 
   @Override
   public void start(Stage primaryStage) {
     App.primaryStage = primaryStage;
     try {
       root =
-          FXMLLoader.load(getClass().getResource("/views/base.fxml"));
+          FXMLLoader.load(getClass().getResource("/mh/views/base.fxml"));
       scene = new Scene(root);
 
       primaryStage.setScene(scene);
@@ -34,7 +42,7 @@ public class App extends Application {
           .add(
               new Image(
                   String.valueOf(
-                      getClass().getResource("/images/favicon.png"))));
+                      getClass().getResource("/mh/images/favicon.png"))));
 
       /*Screen screen = Screen.getPrimary();
       Rectangle2D bounds = screen.getVisualBounds();

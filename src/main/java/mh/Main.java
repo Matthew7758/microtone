@@ -1,4 +1,6 @@
-import database.DB;
+package mh;
+
+import mh.database.*;
 
 import java.sql.Connection;
 

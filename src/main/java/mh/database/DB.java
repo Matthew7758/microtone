@@ -1,4 +1,4 @@
-package database;
+package mh.database;
 
 import java.io.File;
 import java.io.IOException;
@@ -142,6 +142,7 @@ public class DB {
     // System.out.println("End of checkDBExists()");
     return true;
   }
+
   // Performs black magic to get a file path on the user's computer to store the csv files
   public String getProgramPath() throws SQLException, IOException {
     URL url = DB.class.getProtectionDomain().getCodeSource().getLocation();
@@ -196,10 +197,10 @@ public class DB {
       // Add default user to Employee table
       String sql = "INSERT INTO DATA(PLAYER, SCORE, UNLOCKEDKEYS, UNLOCKEDSOUNDS) VALUES (?, ?, ?, ?)";
       PreparedStatement ps = connection.prepareStatement(sql);
-      ps.setString(1,"defaultUser");
-      ps.setInt(2,0);
-      ps.setInt(3,0);
-      ps.setInt(4,0);
+      ps.setString(1, "defaultUser");
+      ps.setInt(2, 100);
+      ps.setInt(3, 0);
+      ps.setInt(4, 0);
       ps.executeUpdate();
       ps.close();
       stmt.close();
