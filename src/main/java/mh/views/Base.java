@@ -80,6 +80,7 @@ public class Base {
   MediaPlayer player;
   HashMap<Button, String> defaultSounds = new HashMap<>();
   HashMap<Button, String> pianoSounds = new HashMap<>();
+  HashMap<Button, String> bassSounds = new HashMap<>();
   HashMap<Integer, Button> answers = new HashMap<>();
   @FXML
   private AnchorPane anchorPane;
@@ -159,6 +160,30 @@ public class Base {
     pianoSounds.put(bHalfFlat, String.valueOf(getClass().getResource("/mh/sounds/piano/22piano.mp3")));
     pianoSounds.put(bNat, String.valueOf(getClass().getResource("/mh/sounds/piano/23piano.mp3")));
     pianoSounds.put(bHalfSharp, String.valueOf(getClass().getResource("/mh/sounds/piano/24piano.mp3")));
+    bassSounds.put(cNat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass01")));
+    bassSounds.put(cHalfSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass02")));
+    bassSounds.put(cSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass03")));
+    bassSounds.put(dHalfFlat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass04")));
+    bassSounds.put(dNat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass05")));
+    bassSounds.put(dHalfSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass06")));
+    bassSounds.put(dSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass07")));
+    bassSounds.put(eHalfFlat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass08")));
+    bassSounds.put(eNat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass09")));
+    bassSounds.put(eHalfSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass10")));
+    bassSounds.put(fNat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass11")));
+    bassSounds.put(fHalfSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass12")));
+    bassSounds.put(fSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass13")));
+    bassSounds.put(gHalfFlat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass14")));
+    bassSounds.put(gNat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass15")));
+    bassSounds.put(gHalfSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass16")));
+    bassSounds.put(gSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass17")));
+    bassSounds.put(aHalfFlat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass18")));
+    bassSounds.put(aNat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass19")));
+    bassSounds.put(aHalfSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass20")));
+    bassSounds.put(aSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass21")));
+    bassSounds.put(bHalfFlat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass22")));
+    bassSounds.put(bNat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass23")));
+    bassSounds.put(bHalfSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass24")));
     try {
       Statement stmt = conn.createStatement();
       String query = String.format("SELECT * FROM DATA WHERE PLAYER = '%s'", "defaultUser");
@@ -247,6 +272,8 @@ public class Base {
       Sound(defaultSounds.get(answerBtn));
     else if (App.getSoundType() == 1)
       Sound(pianoSounds.get(answerBtn));
+    else if (App.getSoundType() == 2)
+      Sound(bassSounds.get(answerBtn));
     replayBtn.setDisable(false);
     play();
   }
@@ -256,6 +283,8 @@ public class Base {
       Sound(defaultSounds.get(answerBtn));
     else if (App.getSoundType() == 1)
       Sound(pianoSounds.get(answerBtn));
+    else if (App.getSoundType() == 2)
+      Sound(bassSounds.get(answerBtn));
     play();
   }
 

@@ -133,6 +133,8 @@ public class Shop {
       soundStr = "Sine Wave";
     else if (tempInt == 1)
       soundStr = "Piano";
+    else if(tempInt == 2)
+      soundStr = "Bass";
     updateUnlockElements();
     currentSound.setText(String.format("Current sound: %s", soundStr));
   }
