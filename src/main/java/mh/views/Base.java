@@ -303,6 +303,8 @@ public class Base {
       Sound(defaultSounds.get(source));
     else if (App.getSoundType() == 1)
       Sound(pianoSounds.get(source));
+    else if (App.getSoundType() == 2)
+      Sound(bassSounds.get(source));
     play();
     if (answerBtn.equals(source)) {
       addScore();
