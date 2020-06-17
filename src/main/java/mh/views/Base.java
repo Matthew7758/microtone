@@ -10,14 +10,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import mh.App;
-import mh.database.*;
+import mh.database.DB;
 
 import java.io.IOException;
 import java.sql.*;
 import java.util.HashMap;
 
 public class Base {
-  @FXML private AnchorPane anchorPane;
   @FXML
   Button replayBtn;
   @FXML
@@ -82,6 +81,8 @@ public class Base {
   HashMap<Button, String> defaultSounds = new HashMap<>();
   HashMap<Button, String> pianoSounds = new HashMap<>();
   HashMap<Integer, Button> answers = new HashMap<>();
+  @FXML
+  private AnchorPane anchorPane;
   private int unlockedKeys;
 
   @FXML
@@ -172,41 +173,41 @@ public class Base {
       }
       System.out.println(tempStr);
       App.setSoundType(tempInt); //Set previously selected sound type.
-      System.out.println("Sound type = "+App.getSoundType());
+      System.out.println("Sound type = " + App.getSoundType());
       score.setText(tempStr);
     } catch (SQLException throwables) {
       throwables.printStackTrace();
     }
-    System.out.println("Unlocked Keys = "+unlockedKeys);
-    if(unlockedKeys>=1) {
+    System.out.println("Unlocked Keys = " + unlockedKeys);
+    if (unlockedKeys >= 1) {
       dHalfFlat.setDisable(false);
       dNat.setDisable(false);
       dHalfSharp.setDisable(false);
       dSharp.setDisable(false);
     }
-    if(unlockedKeys>=2) {
+    if (unlockedKeys >= 2) {
       eHalfFlat.setDisable(false);
       eNat.setDisable(false);
       eHalfSharp.setDisable(false);
     }
-    if(unlockedKeys>=3) {
+    if (unlockedKeys >= 3) {
       fNat.setDisable(false);
       fHalfSharp.setDisable(false);
       fSharp.setDisable(false);
     }
-    if(unlockedKeys>=4) {
+    if (unlockedKeys >= 4) {
       gHalfFlat.setDisable(false);
       gNat.setDisable(false);
       gHalfSharp.setDisable(false);
       gSharp.setDisable(false);
     }
-    if(unlockedKeys>=5) {
+    if (unlockedKeys >= 5) {
       aHalfFlat.setDisable(false);
       aNat.setDisable(false);
       aHalfSharp.setDisable(false);
       aSharp.setDisable(false);
     }
-    if(unlockedKeys>=6) {
+    if (unlockedKeys >= 6) {
       bHalfFlat.setDisable(false);
       bNat.setDisable(false);
       bHalfSharp.setDisable(false);
@@ -215,7 +216,7 @@ public class Base {
 
   public void generateNote() {
     int tempInt = 0;
-    switch(unlockedKeys) {
+    switch (unlockedKeys) {
       case 0:
         tempInt = 3;
         break;

@@ -13,10 +13,11 @@
     <children>
         <GridPane alignment="CENTER" prefHeight="56.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <columnConstraints>
-                <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="269.0" minWidth="10.0" prefWidth="142.0" />
-                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="402.0" minWidth="10.0" prefWidth="143.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="730.0" minWidth="10.0" prefWidth="674.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="433.0" minWidth="10.0" prefWidth="281.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="269.0" minWidth="10.0" prefWidth="142.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="269.0" minWidth="10.0" prefWidth="147.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="402.0" minWidth="10.0" prefWidth="132.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="730.0" minWidth="10.0" prefWidth="418.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="433.0" minWidth="10.0" prefWidth="420.0" />
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
@@ -25,7 +26,7 @@
                 <Insets left="20.0" right="20.0" top="10.0" />
             </padding>
             <children>
-                <Label fx:id="score" alignment="CENTER" contentDisplay="CENTER" prefHeight="55.0" prefWidth="156.0" style="-fx-text-fill: black; -fx-border-color: white; -fx-border-width: 4; -fx-background-color: mistyrose;" text="0" GridPane.columnIndex="2">
+                <Label fx:id="score" alignment="CENTER" contentDisplay="CENTER" prefHeight="55.0" prefWidth="156.0" style="-fx-text-fill: black; -fx-border-color: white; -fx-border-width: 4; -fx-background-color: mistyrose;" text="0" GridPane.columnIndex="3">
                     <font>
                         <Font name="System Bold" size="21.0" />
                     </font>
@@ -46,7 +47,7 @@
                         <Insets />
                     </opaqueInsets>
                 </Button>
-                <Label fx:id="currentSound" alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="261.0" style="-fx-text-fill: black; -fx-border-color: white; -fx-border-width: 2; -fx-background-color: mistyrose;" text="Current Sound: " GridPane.columnIndex="3" />
+                <Label fx:id="currentSound" alignment="CENTER" contentDisplay="CENTER" prefHeight="29.0" prefWidth="261.0" style="-fx-text-fill: black; -fx-border-color: white; -fx-border-width: 2; -fx-background-color: mistyrose;" text="Current Sound: " GridPane.columnIndex="4" />
             </children>
         </GridPane>
         <GridPane layoutX="6.0" layoutY="56.0" prefHeight="666.0" prefWidth="1280.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="56.0">
@@ -73,6 +74,21 @@
                   <Font size="18.0" />
                </font></Label>
             <Label fx:id="unlockErrorLbl" alignment="CENTER" contentDisplay="CENTER" opacity="0.0" prefHeight="29.0" prefWidth="157.0" style="-fx-text-fill: black; -fx-border-color: white; -fx-border-width: 2; -fx-background-color: mistyrose;" text="NOT ENOUGH POINTS" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="nextSoundLbl" alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="348.0" style="-fx-text-fill: black; -fx-border-color: white; -fx-border-width: 2; -fx-background-color: mistyrose;" text="Next Sound Unlock: Piano" GridPane.columnIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="unlockSoundBtn" mnemonicParsing="false" onAction="#unlockSound" prefHeight="162.0" prefWidth="343.0" text="5 Pts" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Arial Bold" size="32.0" />
+               </font>
+            </Button>
+            <Label fx:id="unlockErrorLbl2" alignment="CENTER" contentDisplay="CENTER" opacity="0.0" prefHeight="29.0" prefWidth="157.0" style="-fx-text-fill: black; -fx-border-color: white; -fx-border-width: 2; -fx-background-color: mistyrose;" text="NOT ENOUGH POINTS" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

@@ -7,7 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import mh.App;
-import mh.database.*;
+import mh.database.DB;
 
 import java.io.IOException;
 import java.sql.*;
@@ -19,7 +19,11 @@ public class Shop {
   @FXML Label nextUnlockLbl;
   @FXML Button unlockBtn;
   @FXML Label unlockErrorLbl;
+  @FXML Label unlockErrorLbl2;
+  @FXML Button unlockSoundBtn;
+  @FXML Label nextSoundLbl;
   int unlockedKeys = 0;
+  int unlockedSounds = 0;
 
   DB database = new DB("admin", "password");
   Connection conn = database.connectDB("admin", "password");
@@ -33,7 +37,6 @@ public class Shop {
       ResultSet rs = stmt.executeQuery(query);
       String tempStr = "0";
       int tempInt = 0;
-      int unlockedSounds = 0;
       while (rs.next()) {
         tempStr = Integer.toString(rs.getInt("SCORE"));
         tempInt = rs.getInt("SELECTEDSOUND");
@@ -52,6 +55,7 @@ public class Shop {
 
   //Updates the visual elements depending on the numerical value of unlockedKeys
   public void updateUnlockElements() {
+    //unlockedKeys
     String nextUnlock = "";
     if(unlockedKeys==0)
       nextUnlock="D";
@@ -71,10 +75,24 @@ public class Shop {
     }
     else {
       nextUnlockLbl.setText("All keys unlocked!");
-      unlockBtn.setText("You are winner!");
+      unlockBtn.setText("You're winner!");
       unlockBtn.setDisable(true);
     }
-
+    //unlockedSounds
+    String nextSndUnlock = "";
+    if(unlockedSounds==0)
+      nextSndUnlock="Piano";
+    else if(unlockedSounds==1)
+      nextSndUnlock="Bass";
+    if(unlockedSounds!=2) {
+      nextSoundLbl.setText(String.format("Next Unlock: %s",nextSndUnlock));
+      unlockSoundBtn.setText(String.format("%d Pts",(unlockedSounds+1)*5));
+    }
+    else {
+      nextSoundLbl.setText("All keys unlocked!");
+      unlockSoundBtn.setText("You're winner!");
+      unlockSoundBtn.setDisable(true);
+    }
   }
 
   public void backFcn(ActionEvent actionEvent) {
@@ -87,7 +105,7 @@ public class Shop {
   }
 
   public void changeSound(ActionEvent actionEvent) {
-    if (App.getSoundType() < 1) {//Change 1 to the highest number of sounds in the final game.
+    if (App.getSoundType() < unlockedSounds) {
       App.setSoundType(App.getSoundType() + 1);
       updateSoundLbl(App.getSoundType());
 
@@ -151,5 +169,33 @@ public class Shop {
     }
   }
 
-  //TODO: Unlock Sounds
+  public void unlockSound(ActionEvent actionEvent) {
+    int reqPts = (unlockedSounds+1)*5;
+    if (Integer.parseInt(score.getText()) >= reqPts) {//Add 1 to unlockedKeys in database and update labels/buttons
+      unlockedSounds++;
+      try {//Add 1 to unlockedSounds
+        String sql = "UPDATE DATA SET UNLOCKEDSOUNDS = ? WHERE PLAYER = ?";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setInt(1, unlockedKeys);
+        ps.setString(2, "defaultUser");
+        ps.executeUpdate();
+        ps.close();
+        String sql2 = "UPDATE DATA SET SCORE = ? WHERE PLAYER = ?";
+        PreparedStatement ps2 = conn.prepareStatement(sql2);
+        ps2.setInt(1,Integer.parseInt(score.getText())-reqPts);
+        ps2.setString(2,"defaultUser");
+        ps2.executeUpdate();
+        ps2.close();
+        //Update score label
+        score.setText(Integer.toString(Integer.parseInt(score.getText())-reqPts));
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+      updateUnlockElements();
+    }
+    else {
+      unlockErrorLbl.setOpacity(1.0);
+      unlockBtn.setDisable(true);
+    }
+  }
 }
