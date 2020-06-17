@@ -43,7 +43,9 @@ public class Shop {
         unlockedKeys = rs.getInt("UNLOCKEDKEYS");
         unlockedSounds = rs.getInt("UNLOCKEDSOUNDS");
       }
-      System.out.println(tempStr);
+      System.out.println("SCORE = "+tempStr);
+      System.out.println("Unlocked Keys = "+unlockedKeys);
+      System.out.println("Unlocked Sounds = "+unlockedSounds);
       App.setSoundType(tempInt); //Set previously selected sound type.
       score.setText(tempStr);
       updateSoundLbl(tempInt);
@@ -84,7 +86,7 @@ public class Shop {
       nextSndUnlock="Piano";
     else if(unlockedSounds==1)
       nextSndUnlock="Bass";
-    if(unlockedSounds!=2) {
+    if(unlockedSounds<2) {
       nextSoundLbl.setText(String.format("Next Unlock: %s",nextSndUnlock));
       unlockSoundBtn.setText(String.format("%d Pts",(unlockedSounds+1)*5));
     }
@@ -178,7 +180,7 @@ public class Shop {
       try {//Add 1 to unlockedSounds
         String sql = "UPDATE DATA SET UNLOCKEDSOUNDS = ? WHERE PLAYER = ?";
         PreparedStatement ps = conn.prepareStatement(sql);
-        ps.setInt(1, unlockedKeys);
+        ps.setInt(1, unlockedSounds);
         ps.setString(2, "defaultUser");
         ps.executeUpdate();
         ps.close();
@@ -196,7 +198,7 @@ public class Shop {
       updateUnlockElements();
     }
     else {
-      unlockErrorLbl.setOpacity(1.0);
+      unlockErrorLbl2.setOpacity(1.0);
       unlockBtn.setDisable(true);
     }
   }
