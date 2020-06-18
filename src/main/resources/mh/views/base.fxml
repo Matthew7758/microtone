@@ -53,7 +53,7 @@
                         <Insets />
                     </opaqueInsets>
                 </Button>
-            <Button fx:id="helpBtn" mnemonicParsing="false" prefHeight="55.0" prefWidth="126.0" text="Help" GridPane.columnIndex="5">
+            <Button fx:id="helpBtn" mnemonicParsing="false" onAction="#openHelp" prefHeight="55.0" prefWidth="126.0" text="Help" GridPane.columnIndex="5">
                <font>
                   <Font size="18.0" />
                </font>

@@ -351,4 +351,13 @@ public class Base {
   public void setVolume(double value) {
     player.setVolume(value);
   }
+
+  public void openHelp(ActionEvent actionEvent) {
+    try {
+      Parent root = FXMLLoader.load(getClass().getResource("/mh/views/help.fxml"));
+      App.getPrimaryStage().getScene().setRoot(root);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
 }
