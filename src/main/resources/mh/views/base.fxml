@@ -13,11 +13,12 @@
     <children>
         <GridPane alignment="CENTER" prefHeight="56.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <columnConstraints>
-                <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="269.0" minWidth="10.0" prefWidth="142.0" />
-                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="402.0" minWidth="10.0" prefWidth="143.0" />
-                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="402.0" minWidth="10.0" prefWidth="144.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="730.0" minWidth="10.0" prefWidth="387.0" />
-                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="433.0" minWidth="10.0" prefWidth="426.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="269.0" minWidth="10.0" prefWidth="156.19998779296876" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="402.0" minWidth="10.0" prefWidth="181.0000122070313" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="402.0" minWidth="10.0" prefWidth="159.5999877929687" />
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="730.0" minWidth="10.0" prefWidth="268.5999633789062" />
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="503.39993896484384" minWidth="10.0" prefWidth="283.20003662109366" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="433.0" minWidth="10.0" prefWidth="207.4000610351561" />
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
@@ -52,6 +53,11 @@
                         <Insets />
                     </opaqueInsets>
                 </Button>
+            <Button fx:id="helpBtn" mnemonicParsing="false" prefHeight="55.0" prefWidth="126.0" text="Help" GridPane.columnIndex="5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
             </children>
         </GridPane>
 
