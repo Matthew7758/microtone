@@ -72,7 +72,7 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="To use this application, you must click the &quot;new note&quot; button on the home screen.  The app will then play a random note, and you must select the corresponding note from a grid of 24 options.  Every successful guess will award you a point, and you can use accumulated points to unlock different sounds from the shop." wrappingWidth="630.698486328125" GridPane.rowIndex="1">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="To use this application, you must click the &quot;new note&quot; button on the home screen.  The app will then play a random note, and you must select the corresponding note from the grid of options.  Every successful choice will award you a point, and you can use accumulated points to unlock different sounds and more keys from the shop." wrappingWidth="630.698486328125" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
