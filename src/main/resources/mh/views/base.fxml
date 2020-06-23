@@ -7,200 +7,209 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: maroon;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mh.views.Base">
     <children>
-        <GridPane alignment="CENTER" prefHeight="56.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <columnConstraints>
-                <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="269.0" minWidth="10.0" prefWidth="156.19998779296876" />
-                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="402.0" minWidth="10.0" prefWidth="181.0000122070313" />
-                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="402.0" minWidth="10.0" prefWidth="159.5999877929687" />
-                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="730.0" minWidth="10.0" prefWidth="268.5999633789062" />
-                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="503.39993896484384" minWidth="10.0" prefWidth="283.20003662109366" />
-            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="433.0" minWidth="10.0" prefWidth="207.4000610351561" />
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-            </rowConstraints>
-            <padding>
-                <Insets left="20.0" right="20.0" top="10.0" />
-            </padding>
-            <children>
-                <Button fx:id="replayBtn" disable="true" mnemonicParsing="false" onAction="#replayNote" prefHeight="53.0" prefWidth="126.0" text="Replay Note">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                    <opaqueInsets>
-                        <Insets />
-                    </opaqueInsets>
-                </Button>
-                <Button fx:id="shopBtn" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#openShop" prefHeight="55.0" prefWidth="126.0" text="Shop" GridPane.columnIndex="4">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                </Button>
-                <Label fx:id="score" alignment="CENTER" contentDisplay="CENTER" prefHeight="55.0" prefWidth="156.0" style="-fx-text-fill: black; -fx-border-color: white; -fx-border-width: 4; -fx-background-color: mistyrose;" text="0" GridPane.columnIndex="3">
-                    <font>
-                        <Font name="System Bold" size="21.0" />
-                    </font>
-                </Label>
-                <Button fx:id="newNoteBtn" mnemonicParsing="false" onAction="#generateNote" prefHeight="53.0" prefWidth="126.0" text="New Note" GridPane.columnIndex="1">
-                    <font>
-                        <Font size="18.0" />
-                    </font>
-                    <opaqueInsets>
-                        <Insets />
-                    </opaqueInsets>
-                </Button>
-            <Button fx:id="helpBtn" mnemonicParsing="false" onAction="#openHelp" prefHeight="55.0" prefWidth="126.0" text="Help" GridPane.columnIndex="5">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            </children>
-        </GridPane>
-
-        <GridPane gridLinesVisible="true" layoutY="55.0" prefHeight="666.0" prefWidth="1280.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0">
-            <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            </rowConstraints>
-            <children>
-                <Button fx:id="cNat" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="C">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="cHalfSharp" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="C𝄲" GridPane.columnIndex="1">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="cSharp" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="C♯" GridPane.columnIndex="2">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="dHalfFlat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="D𝄳" GridPane.columnIndex="3">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="dNat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="D" GridPane.columnIndex="4">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="dHalfSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="D𝄲" GridPane.columnIndex="5">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="dSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="D♯" GridPane.rowIndex="1">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="eHalfFlat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="E𝄳" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="eNat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="E" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="eHalfSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="E𝄲" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="fNat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="F" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="fHalfSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="F𝄲" GridPane.columnIndex="5" GridPane.rowIndex="1">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="fSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="F♯" GridPane.rowIndex="2">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="gHalfFlat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="G𝄳" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="gNat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="G" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="gHalfSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="G𝄲" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="gSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="G♯" GridPane.columnIndex="4" GridPane.rowIndex="2">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="aHalfFlat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="A𝄳" GridPane.columnIndex="5" GridPane.rowIndex="2">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="aNat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="A" GridPane.rowIndex="3">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="aHalfSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="A𝄲" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="aSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="A♯" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="bHalfFlat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="B𝄳" GridPane.columnIndex="3" GridPane.rowIndex="3">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="bNat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="B" GridPane.columnIndex="4" GridPane.rowIndex="3">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-                <Button fx:id="bHalfSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="B𝄲" GridPane.columnIndex="5" GridPane.rowIndex="3">
-                    <font>
-                        <Font name="Times New Roman Bold" size="70.0" />
-                    </font>
-                </Button>
-            </children>
-            <padding>
-                <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
-            </padding>
-        </GridPane>
+      <StackPane prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                    <GridPane alignment="CENTER" prefHeight="56.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <columnConstraints>
+                            <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="269.0" minWidth="10.0" prefWidth="156.19998779296876" />
+                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="402.0" minWidth="10.0" prefWidth="181.0000122070313" />
+                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="402.0" minWidth="10.0" prefWidth="159.5999877929687" />
+                            <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="730.0" minWidth="10.0" prefWidth="268.5999633789062" />
+                            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="503.39993896484384" minWidth="10.0" prefWidth="283.20003662109366" />
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="433.0" minWidth="10.0" prefWidth="207.4000610351561" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <padding>
+                            <Insets left="20.0" right="20.0" top="10.0" />
+                        </padding>
+                        <children>
+                            <Button fx:id="replayBtn" disable="true" mnemonicParsing="false" onAction="#replayNote" prefHeight="53.0" prefWidth="126.0" text="Replay Note">
+                                <font>
+                                    <Font size="18.0" />
+                                </font>
+                                <opaqueInsets>
+                                    <Insets />
+                                </opaqueInsets>
+                            </Button>
+                            <Button fx:id="shopBtn" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#openShop" prefHeight="55.0" prefWidth="126.0" text="Shop" GridPane.columnIndex="4">
+                                <font>
+                                    <Font size="18.0" />
+                                </font>
+                            </Button>
+                            <Label fx:id="score" alignment="CENTER" contentDisplay="CENTER" prefHeight="55.0" prefWidth="156.0" style="-fx-text-fill: black; -fx-border-color: white; -fx-border-width: 4; -fx-background-color: mistyrose;" text="0" GridPane.columnIndex="3">
+                                <font>
+                                    <Font name="System Bold" size="21.0" />
+                                </font>
+                            </Label>
+                            <Button fx:id="newNoteBtn" mnemonicParsing="false" onAction="#generateNote" prefHeight="53.0" prefWidth="126.0" text="New Note" GridPane.columnIndex="1">
+                                <font>
+                                    <Font size="18.0" />
+                                </font>
+                                <opaqueInsets>
+                                    <Insets />
+                                </opaqueInsets>
+                            </Button>
+                        <Button fx:id="helpBtn" mnemonicParsing="false" onAction="#openHelp" prefHeight="55.0" prefWidth="126.0" text="Help" GridPane.columnIndex="5">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        </children>
+                    </GridPane>
+            
+                    <GridPane gridLinesVisible="true" prefHeight="666.0" prefWidth="1280.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0">
+                        <columnConstraints>
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <children>
+                            <Button fx:id="cNat" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="C">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="cHalfSharp" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="C𝄲" GridPane.columnIndex="1">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="cSharp" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="C♯" GridPane.columnIndex="2">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="dHalfFlat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="D𝄳" GridPane.columnIndex="3">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="dNat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="D" GridPane.columnIndex="4">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="dHalfSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="D𝄲" GridPane.columnIndex="5">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="dSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="D♯" GridPane.rowIndex="1">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="eHalfFlat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="E𝄳" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="eNat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="E" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="eHalfSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="E𝄲" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="fNat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="F" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="fHalfSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="F𝄲" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="fSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="F♯" GridPane.rowIndex="2">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="gHalfFlat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="G𝄳" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="gNat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="G" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="gHalfSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="G𝄲" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="gSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="G♯" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="aHalfFlat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="A𝄳" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="aNat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="A" GridPane.rowIndex="3">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="aHalfSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="A𝄲" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="aSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="A♯" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="bHalfFlat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="B𝄳" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="bNat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="B" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="bHalfSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="B𝄲" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                                <font>
+                                    <Font name="Times New Roman Bold" size="70.0" />
+                                </font>
+                            </Button>
+                        </children>
+                        <padding>
+                            <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                        </padding>
+                    </GridPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
     </children>
 </AnchorPane>

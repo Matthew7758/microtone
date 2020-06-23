@@ -5,8 +5,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import mh.App;
@@ -14,9 +16,14 @@ import mh.database.DB;
 
 import java.io.IOException;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Optional;
 
 public class Base {
+  @FXML
+  StackPane stackPane;
   @FXML
   Button replayBtn;
   @FXML
@@ -276,6 +283,26 @@ public class Base {
       Sound(bassSounds.get(answerBtn));
     replayBtn.setDisable(false);
     play();
+    //-----------------------------
+    //Alert
+    List<String> choices = new ArrayList<>();
+    choices.add("Whole tone");
+    choices.add("Microtone");
+
+    ChoiceDialog<String> dialog = new ChoiceDialog<>("Whole tone", choices);
+    dialog.setTitle("Choice Dialog");
+    dialog.setHeaderText("Choose the correct option for a chance to earn a bonus point, then the note using the on screen keyboard below.");
+    dialog.setContentText("Choose whether tone is a whole tone or microtone:");
+
+    Optional<String> result = dialog.showAndWait();
+    if (result.isPresent()){
+      System.out.println("Your choice: " + result.get());
+      if((ans%2==0)&&result.get().equals("Microtone"))
+        addScore();
+      if((ans%2!=0)&&result.get().equals("Whole tone"))
+        addScore();
+    }
+    result.ifPresent(s -> System.out.println("Your choice: " + s));
   }
 
   public void replayNote(ActionEvent actionEvent) {
