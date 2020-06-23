@@ -78,6 +78,8 @@ public class Base {
   Button bHalfSharp;
   @FXML
   Label score;
+  @FXML
+  Button newNoteBtn;
   Button answerBtn = new Button();
   Button nullBtn = new Button();
   DB database = new DB("admin", "password");
@@ -167,30 +169,30 @@ public class Base {
     pianoSounds.put(bHalfFlat, String.valueOf(getClass().getResource("/mh/sounds/piano/22piano.mp3")));
     pianoSounds.put(bNat, String.valueOf(getClass().getResource("/mh/sounds/piano/23piano.mp3")));
     pianoSounds.put(bHalfSharp, String.valueOf(getClass().getResource("/mh/sounds/piano/24piano.mp3")));
-    bassSounds.put(cNat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass01.mp3")));
-    bassSounds.put(cHalfSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass02.mp3")));
-    bassSounds.put(cSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass03.mp3")));
-    bassSounds.put(dHalfFlat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass04.mp3")));
-    bassSounds.put(dNat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass05.mp3")));
-    bassSounds.put(dHalfSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass06.mp3")));
-    bassSounds.put(dSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass07.mp3")));
-    bassSounds.put(eHalfFlat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass08.mp3")));
-    bassSounds.put(eNat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass09.mp3")));
-    bassSounds.put(eHalfSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass10.mp3")));
-    bassSounds.put(fNat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass11.mp3")));
-    bassSounds.put(fHalfSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass12.mp3")));
-    bassSounds.put(fSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass13.mp3")));
-    bassSounds.put(gHalfFlat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass14.mp3")));
-    bassSounds.put(gNat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass15.mp3")));
-    bassSounds.put(gHalfSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass16.mp3")));
-    bassSounds.put(gSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass17.mp3")));
-    bassSounds.put(aHalfFlat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass18.mp3")));
-    bassSounds.put(aNat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass19.mp3")));
-    bassSounds.put(aHalfSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass20.mp3")));
-    bassSounds.put(aSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass21.mp3")));
-    bassSounds.put(bHalfFlat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass22.mp3")));
-    bassSounds.put(bNat,String.valueOf(getClass().getResource("/mh/sounds/bass/bass23.mp3")));
-    bassSounds.put(bHalfSharp,String.valueOf(getClass().getResource("/mh/sounds/bass/bass24.mp3")));
+    bassSounds.put(cNat, String.valueOf(getClass().getResource("/mh/sounds/bass/bass01.mp3")));
+    bassSounds.put(cHalfSharp, String.valueOf(getClass().getResource("/mh/sounds/bass/bass02.mp3")));
+    bassSounds.put(cSharp, String.valueOf(getClass().getResource("/mh/sounds/bass/bass03.mp3")));
+    bassSounds.put(dHalfFlat, String.valueOf(getClass().getResource("/mh/sounds/bass/bass04.mp3")));
+    bassSounds.put(dNat, String.valueOf(getClass().getResource("/mh/sounds/bass/bass05.mp3")));
+    bassSounds.put(dHalfSharp, String.valueOf(getClass().getResource("/mh/sounds/bass/bass06.mp3")));
+    bassSounds.put(dSharp, String.valueOf(getClass().getResource("/mh/sounds/bass/bass07.mp3")));
+    bassSounds.put(eHalfFlat, String.valueOf(getClass().getResource("/mh/sounds/bass/bass08.mp3")));
+    bassSounds.put(eNat, String.valueOf(getClass().getResource("/mh/sounds/bass/bass09.mp3")));
+    bassSounds.put(eHalfSharp, String.valueOf(getClass().getResource("/mh/sounds/bass/bass10.mp3")));
+    bassSounds.put(fNat, String.valueOf(getClass().getResource("/mh/sounds/bass/bass11.mp3")));
+    bassSounds.put(fHalfSharp, String.valueOf(getClass().getResource("/mh/sounds/bass/bass12.mp3")));
+    bassSounds.put(fSharp, String.valueOf(getClass().getResource("/mh/sounds/bass/bass13.mp3")));
+    bassSounds.put(gHalfFlat, String.valueOf(getClass().getResource("/mh/sounds/bass/bass14.mp3")));
+    bassSounds.put(gNat, String.valueOf(getClass().getResource("/mh/sounds/bass/bass15.mp3")));
+    bassSounds.put(gHalfSharp, String.valueOf(getClass().getResource("/mh/sounds/bass/bass16.mp3")));
+    bassSounds.put(gSharp, String.valueOf(getClass().getResource("/mh/sounds/bass/bass17.mp3")));
+    bassSounds.put(aHalfFlat, String.valueOf(getClass().getResource("/mh/sounds/bass/bass18.mp3")));
+    bassSounds.put(aNat, String.valueOf(getClass().getResource("/mh/sounds/bass/bass19.mp3")));
+    bassSounds.put(aHalfSharp, String.valueOf(getClass().getResource("/mh/sounds/bass/bass20.mp3")));
+    bassSounds.put(aSharp, String.valueOf(getClass().getResource("/mh/sounds/bass/bass21.mp3")));
+    bassSounds.put(bHalfFlat, String.valueOf(getClass().getResource("/mh/sounds/bass/bass22.mp3")));
+    bassSounds.put(bNat, String.valueOf(getClass().getResource("/mh/sounds/bass/bass23.mp3")));
+    bassSounds.put(bHalfSharp, String.valueOf(getClass().getResource("/mh/sounds/bass/bass24.mp3")));
     try {
       Statement stmt = conn.createStatement();
       String query = String.format("SELECT * FROM DATA WHERE PLAYER = '%s'", "defaultUser");
@@ -283,24 +285,33 @@ public class Base {
       Sound(bassSounds.get(answerBtn));
     replayBtn.setDisable(false);
     play();
+    newNoteBtn.setDisable(true);
     //-----------------------------
     //Alert
     List<String> choices = new ArrayList<>();
-    choices.add("Whole tone");
+    choices.add("Whole Tone");
     choices.add("Microtone");
 
-    ChoiceDialog<String> dialog = new ChoiceDialog<>("Whole tone", choices);
-    dialog.setTitle("Choice Dialog");
+    ChoiceDialog<String> dialog = new ChoiceDialog<>("Whole Tone", choices);
+    dialog.setTitle("Whole Tone vs. Microtone");
     dialog.setHeaderText("Choose the correct option for a chance to earn a bonus point, then the note using the on screen keyboard below.");
     dialog.setContentText("Choose whether tone is a whole tone or microtone:");
 
     Optional<String> result = dialog.showAndWait();
-    if (result.isPresent()){
+    if (result.isPresent()) {
       System.out.println("Your choice: " + result.get());
-      if((ans%2==0)&&result.get().equals("Microtone"))
+      if ((ans % 2 == 0) && result.get().equals("Microtone")) {
         addScore();
-      if((ans%2!=0)&&result.get().equals("Whole tone"))
+        Sound(String.valueOf(getClass().getResource("/mh/sounds/effects/CorrectAnswer.mp3")));
+        play();
+      } else if ((ans % 2 != 0) && result.get().equals("Whole tone")) {
         addScore();
+        Sound(String.valueOf(getClass().getResource("/mh/sounds/effects/CorrectAnswer.mp3")));
+        play();
+      } else {
+        Sound(String.valueOf(getClass().getResource("/mh/sounds/effects/WrongAnswer.mp3")));
+        play();
+      }
     }
     result.ifPresent(s -> System.out.println("Your choice: " + s));
   }
@@ -337,6 +348,7 @@ public class Base {
       addScore();
       answerBtn = nullBtn;
       replayBtn.setDisable(true);
+      newNoteBtn.setDisable(false);
     }
   }
 
