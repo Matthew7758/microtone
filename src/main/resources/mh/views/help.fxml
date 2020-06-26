@@ -58,21 +58,27 @@
             </Button>
          </children>
         </GridPane>
-      <GridPane alignment="CENTER" layoutX="325.0" layoutY="340.0" prefHeight="292.0" prefWidth="630.0">
+      <GridPane alignment="CENTER" layoutX="274.0" layoutY="300.0" prefHeight="410.0" prefWidth="734.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="This application is designed to train its users in their ability to recognize and distinguish between microtones and notes from within traditional twelve-tone equal temperament.  The two buttons above, will play short clips of a progression written in 12-TET, and a progression written using microtones, respectively." wrappingWidth="632.2509460449219">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="This application is designed to train its users in their ability to recognize and distinguish between microtones and notes from within traditional twelve-tone equal temperament.  Clicking the two buttons above will play short clips of a progression written in 12-TET, and a progression written using microtones, respectively." wrappingWidth="732.2509460449219" GridPane.rowIndex="1">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="To use this application, you must click the &quot;new note&quot; button on the home screen.  The app will then play a random note, and you must select the corresponding note from the grid of options.  Every successful choice will award you a point, and you can use accumulated points to unlock different sounds and more keys from the shop." wrappingWidth="630.698486328125" GridPane.rowIndex="1">
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="To use this application, you must click the &quot;new note&quot; button on the home screen.  The app will then play a random note, and you must select the corresponding note from the grid of options.  Every successful choice will award you a point, and you can use accumulated points to unlock different sounds and more keys from the shop." wrappingWidth="733.0985107421875" GridPane.rowIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Twelve-tone equal temperament, or 12-TET, is a system of organizing musical notes.  It divides notes into twelve 'tones,' all of which are equally spaced from each other.  Conversely, microronal notes are the notes that do not fit within 12-TET.  The microtones featured in this application are often referred to as &quot;half sharps&quot; or &quot;half flats,&quot; because they are the notes which occur halfway between a whole note, and a sharp or flat note." wrappingWidth="736.298583984375">
                <font>
                   <Font size="18.0" />
                </font>
