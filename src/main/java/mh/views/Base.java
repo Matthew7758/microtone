@@ -304,7 +304,7 @@ public class Base {
         addScore();
         Sound(String.valueOf(getClass().getResource("/mh/sounds/effects/CorrectAnswer.mp3")));
         play();
-      } else if ((ans % 2 != 0) && result.get().equals("Whole tone")) {
+      } else if ((ans % 2 != 0) && result.get().equals("Whole Tone")) {
         addScore();
         Sound(String.valueOf(getClass().getResource("/mh/sounds/effects/CorrectAnswer.mp3")));
         play();
