@@ -99,9 +99,10 @@ public class Shop {
 
   public void backFcn(ActionEvent actionEvent) {
     try {
+      conn.close();
       Parent root = FXMLLoader.load(getClass().getResource("/mh/views/base.fxml"));
       App.getPrimaryStage().getScene().setRoot(root);
-    } catch (IOException e) {
+    } catch (IOException | SQLException e) {
       e.printStackTrace();
     }
   }

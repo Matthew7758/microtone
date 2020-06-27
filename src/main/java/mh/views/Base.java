@@ -328,9 +328,10 @@ public class Base {
 
   public void openShop(ActionEvent actionEvent) {
     try {
+      conn.close();
       Parent root = FXMLLoader.load(getClass().getResource("/mh/views/shop.fxml"));
       App.getPrimaryStage().getScene().setRoot(root);
-    } catch (IOException e) {
+    } catch (IOException | SQLException e) {
       e.printStackTrace();
     }
   }
