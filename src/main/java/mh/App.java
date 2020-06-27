@@ -48,6 +48,7 @@ public class App extends Application {
       Rectangle2D bounds = screen.getVisualBounds();
       App.getPrimaryStage().setWidth(bounds.getWidth());
       App.getPrimaryStage().setHeight(bounds.getHeight());*/
+      App.getPrimaryStage().setMaximized(true);
       primaryStage.show();
     } catch (IOException e) {
       e.printStackTrace();
