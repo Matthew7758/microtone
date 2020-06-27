@@ -181,64 +181,64 @@
                      <children>
                             <Button fx:id="cHalfSharp" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="C𝄲" GridPane.columnIndex="2">
                                 <font>
-                                    <Font name="Times New Roman Bold" size="30.0" />
+                                    <Font name="Times New Roman Bold" size="26.0" />
                                 </font>
                             </Button>
                             <Button fx:id="dHalfFlat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="D𝄳" GridPane.columnIndex="3">
                                 <font>
-                                    <Font name="Times New Roman Bold" size="30.0" />
+                                    <Font name="Times New Roman Bold" size="26.0" />
                                 </font>
                             </Button>
                             <Button fx:id="dHalfSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="D𝄲" GridPane.columnIndex="4">
                                 <font>
-                                    <Font name="Times New Roman Bold" size="30.0" />
+                                    <Font name="Times New Roman Bold" size="26.0" />
                                 </font>
                             </Button>
                             <Button fx:id="eHalfFlat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="E𝄳" GridPane.columnIndex="5">
                                 <font>
-                                    <Font name="Times New Roman Bold" size="30.0" />
+                                    <Font name="Times New Roman Bold" size="26.0" />
                                 </font>
                             </Button>
                             <Button fx:id="fHalfSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="F𝄲" GridPane.columnIndex="8">
                                 <font>
-                                    <Font name="Times New Roman Bold" size="30.0" />
+                                    <Font name="Times New Roman Bold" size="26.0" />
                                 </font>
                             </Button>
                             <Button fx:id="gHalfFlat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="G𝄳" GridPane.columnIndex="9">
                                 <font>
-                                    <Font name="Times New Roman Bold" size="29.0" />
+                                    <Font name="Times New Roman Bold" size="26.0" />
                                 </font>
                             </Button>
                             <Button fx:id="gHalfSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="G𝄲" GridPane.columnIndex="10">
                                 <font>
-                                    <Font name="Times New Roman Bold" size="30.0" />
+                                    <Font name="Times New Roman Bold" size="26.0" />
                                 </font>
                             </Button>
                             <Button fx:id="aHalfFlat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="A𝄳" GridPane.columnIndex="11">
                                 <font>
-                                    <Font name="Times New Roman Bold" size="30.0" />
+                                    <Font name="Times New Roman Bold" size="26.0" />
                                 </font>
                             </Button>
                             <Button fx:id="aHalfSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="A𝄲" GridPane.columnIndex="12">
                                 <font>
-                                    <Font name="Times New Roman Bold" size="30.0" />
+                                    <Font name="Times New Roman Bold" size="26.0" />
                                 </font>
                             </Button>
                             <Button fx:id="bHalfFlat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="B𝄳" GridPane.columnIndex="13">
                                 <font>
-                                    <Font name="Times New Roman Bold" size="30.0" />
+                                    <Font name="Times New Roman Bold" size="26.0" />
                                 </font>
                             </Button>
                             <Button fx:id="bHalfSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="B𝄲" GridPane.columnIndex="14">
                                 <font>
-                                    <Font name="Times New Roman Bold" size="30.0" />
+                                    <Font name="Times New Roman Bold" size="26.0" />
                                 </font>
                             </Button>
                      </children>
                   </GridPane>
                       <Button fx:id="eHalfSharp" disable="true" layoutX="517.0" layoutY="210.0" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="90.0" prefWidth="80.0" text="E𝄲">
                           <font>
-                              <Font name="Times New Roman Bold" size="30.0" />
+                              <Font name="Times New Roman Bold" size="26.0" />
                           </font>
                       </Button>
                </children>
