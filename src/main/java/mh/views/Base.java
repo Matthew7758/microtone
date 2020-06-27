@@ -295,7 +295,7 @@ public class Base {
     ChoiceDialog<String> dialog = new ChoiceDialog<>("Whole Tone", choices);
     dialog.setTitle("Whole Tone vs. Microtone");
     dialog.setHeaderText("Choose the correct option for a chance to earn a bonus point, then the note using the on screen keyboard below.");
-    dialog.setContentText("Choose whether tone is a whole tone or microtone:");
+    dialog.setContentText("Determine whether tone is a whole tone or microtone:");
 
     Optional<String> result = dialog.showAndWait();
     if (result.isPresent()) {

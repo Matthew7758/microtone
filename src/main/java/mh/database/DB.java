@@ -21,15 +21,6 @@ public class DB {
     // Detect if files already exist in source path of .jar
     String temp;
     try {
-      temp = getProgramPath();
-      File tmpDir = new File(temp + "/dbData");
-      boolean exists = tmpDir.exists();
-      if (!exists) {
-        String d = temp + "/dbData/";
-        System.out.println("Making directory at " + d);
-        File dir = new File(d); // The name of the directory to create
-        dir.mkdir(); // Creates the directory
-      }
       // Check to see if the database exists.
       if (checkDBExists()) {
         // System.out.println("Database exists");
@@ -39,7 +30,7 @@ public class DB {
         System.out.println("Running first time setup");
         runSetup();
       }
-    } catch (IOException | SQLException e) {
+    } catch (SQLException e) {
       e.printStackTrace();
     }
   }
@@ -198,7 +189,7 @@ public class DB {
       String sql = "INSERT INTO DATA(PLAYER, SCORE, UNLOCKEDKEYS, UNLOCKEDSOUNDS) VALUES (?, ?, ?, ?)";
       PreparedStatement ps = connection.prepareStatement(sql);
       ps.setString(1, "defaultUser");
-      ps.setInt(2, 100);
+      ps.setInt(2, 0);
       ps.setInt(3, 0);
       ps.setInt(4, 0);
       ps.executeUpdate();

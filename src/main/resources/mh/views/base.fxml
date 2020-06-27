@@ -206,7 +206,7 @@
                             </Button>
                             <Button fx:id="gHalfFlat" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="G𝄳" GridPane.columnIndex="9">
                                 <font>
-                                    <Font name="Times New Roman Bold" size="30.0" />
+                                    <Font name="Times New Roman Bold" size="29.0" />
                                 </font>
                             </Button>
                             <Button fx:id="gHalfSharp" disable="true" mnemonicParsing="false" onAction="#checkAnswer" prefHeight="592.0" prefWidth="922.0" text="G𝄲" GridPane.columnIndex="10">
